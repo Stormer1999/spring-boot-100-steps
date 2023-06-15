@@ -44,4 +44,9 @@ public class TodoService {
 
         return todo.orElse(null);
     }
+
+    public void updateTodo(Todo todo) {
+        deleteById(todo.getId());
+        todos.add(todo);
+    }
 }
