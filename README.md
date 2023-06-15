@@ -1,3 +1,3 @@
 # Master Spring Boot in 100 Steps
 
-### current: 27/100
+### current: 28/100
