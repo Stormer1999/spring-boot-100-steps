@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8-oracle
+    container_name: mysql-docker
+    environment:
+      MYSQL_ROOT_PASSWORD: dummypassword
+      MYSQL_USER: todos-user
+      MYSQL_PASSWORD: dummytodos
+      MYSQL_DATABASE: todos
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql-docker
+      PMA_USER: todos-user
+      PMA_PASSWORD: dummytodos
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
